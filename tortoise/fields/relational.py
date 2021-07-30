@@ -338,6 +338,7 @@ class ForeignKeyFieldInstance(RelationalField):
         desc = super().describe(serializable)
         desc["raw_field"] = self.source_field
         desc["on_delete"] = self.on_delete
+        desc["db_constraint"] = self.db_constraint
         return desc
 
 
